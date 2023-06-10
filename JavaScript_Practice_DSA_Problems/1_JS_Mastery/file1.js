@@ -58,6 +58,7 @@ const pi = 3.14;
 console.log(pi);
 
 // ================ String Literal =============
+// strings are immutable (cannot be changed) in nature
 
 let second_name = "Rahul";
 console.log(second_name);
@@ -75,3 +76,58 @@ console.log(second_name.length);
 
 // last character of string
 console.log(second_name[second_name.length - 1]);
+
+// ================ Strings functions =============
+
+// trim()
+
+let firstName1 = "  Mohit  ";
+let firstName2 = firstName1.trim();
+console.log(firstName2, firstName2.length);
+
+// toUpperCase()
+
+console.log(firstName2.toUpperCase());
+
+// toLowerCase()
+
+console.log(firstName2.toLowerCase());
+
+// slice()
+
+// Start index
+// End index
+
+console.log(firstName2.slice(0, 2));
+
+// ================= typeof operator =============
+
+// data types (primitive data types)
+// 1. number  2,3,4,5
+// 2. string "Mohit"
+// 3. boolean  true,false (true or false)
+// 4. null
+// 5. undefined
+// 6. object
+// 7. function
+// 8. array
+// 9. symbol
+// 10. bigint
+
+let age = 22;
+let name = "Mohit";
+console.log(typeof age);
+console.log(typeof name);
+
+// convert string to number
+let age1 = "22";
+console.log(typeof age1);
+console.log(typeof +age1);
+console.log(Number(age1));
+
+// convert number to string
+
+let age2 = 22;
+console.log(typeof age2);
+console.log(String(age2));
+console.log(typeof (age2 + ""));
