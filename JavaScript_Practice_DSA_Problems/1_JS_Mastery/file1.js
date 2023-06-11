@@ -244,3 +244,46 @@ let age5 = 21;
 let result =
   age5 >= 18 ? "You are eligible to vote" : "You are not eligible to vote";
 console.log(result);
+
+// ================= && || operators =================
+
+let age6 = 21;
+let result1 = "Pass";
+
+if (age6 >= 18 && result1 == "Pass") {
+  console.log("You are eligible to vote");
+} else {
+  console.log("You are not eligible to vote");
+}
+
+if (age6 >= 18 || result1 == "Fail") {
+  console.log("You are eligible to vote");
+} else {
+  console.log("You are not eligible to vote");
+}
+
+// ================= nested if else =================
+
+let winnigNumber = 19;
+// let userGuess = +prompt("Guess the number");
+let userGuess = 17;
+if (winnigNumber == userGuess) {
+  console.log("You won");
+} else {
+  if (userGuess > winnigNumber) {
+    console.log("You are too high");
+  } else {
+    console.log("You are too low");
+  }
+}
+
+// ================ if elseif else =================
+
+let tempInDegrees = 20;
+if (tempInDegrees > 30) {
+  console.log("It is hot outside");
+} else if (tempInDegrees > 20) {
+  console.log("It is warm outside");
+} else {
+  console.log("It is cold outside");
+}
