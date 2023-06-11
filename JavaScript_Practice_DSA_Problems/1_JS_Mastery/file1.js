@@ -150,3 +150,39 @@ let newNumber1 = +number1 + +number2; // convert string to number and adding
 
 console.log(newNumber);
 console.log(newNumber1);
+
+// ================ Template string ===================
+
+let age3 = 22;
+let name3 = "Mohit";
+
+// "my name is harshit and my age is 22"
+// let aboutMe = "my name is " + name3 + " and my age is " + age3;
+
+let aboutMe = `my name is ${name3} and my age is ${age3}`;
+console.log(aboutMe);
+
+// =============== Undefined ========================
+
+// Undefined variable
+
+let undefinedVariable; // undefined
+// var allowed but const not allowed to undefined
+console.log(typeof undefinedVariable);
+undefinedVariable = 11;
+console.log(typeof undefinedVariable, undefinedVariable);
+
+// null
+
+let nullVariable = null;
+console.log(nullVariable);
+console.log(typeof nullVariable); // error | bug showing object
+nullVariable = "Jane";
+console.log(nullVariable);
+
+// Bigint
+
+let bigInt = BigInt(22);
+let bigInt1 = 44n;
+console.log(bigInt);
+console.log(typeof bigInt);
