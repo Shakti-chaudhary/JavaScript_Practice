@@ -186,3 +186,40 @@ let bigInt = BigInt(22);
 let bigInt1 = 44n;
 console.log(bigInt);
 console.log(typeof bigInt);
+
+// =============== booleans & comparison operators ====================
+
+// booleans
+// true or false
+
+let num1 = 7;
+let num2 = 7;
+
+console.log(num1 >= num2);
+console.log(num1 > num2);
+
+// == vs ===
+
+let num3 = "7";
+console.log(num3 == num2);
+console.log(num3 === num2);
+
+//. != vs !==
+
+console.log(num3 != num2);
+console.log(num3 !== num2);
+
+// =============== truthy and falsy values ================
+
+// truthy values
+
+// true
+
+// falsy values
+
+// false
+// ""
+// null
+// undefined
+// 0
+// NaN
