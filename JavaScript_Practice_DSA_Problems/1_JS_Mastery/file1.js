@@ -187,7 +187,7 @@ let bigInt1 = 44n;
 console.log(bigInt);
 console.log(typeof bigInt);
 
-// =============== booleans & comparison operators ====================
+// =============== Booleans & Comparison operators ====================
 
 // booleans
 // true or false
@@ -209,7 +209,7 @@ console.log(num3 === num2);
 console.log(num3 != num2);
 console.log(num3 !== num2);
 
-// =============== truthy and falsy values ================
+// =============== Truthy and Falsy values ================
 
 // truthy values
 
@@ -238,7 +238,7 @@ if (age4 % 2 == 0) {
   console.log("odd");
 }
 
-// =============== ternary operator =====================
+// =============== Ternary operator =====================
 
 let age5 = 21;
 let result =
@@ -262,7 +262,7 @@ if (age6 >= 18 || result1 == "Fail") {
   console.log("You are not eligible to vote");
 }
 
-// ================= nested if else =================
+// ================= Nested if else =================
 
 let winnigNumber = 19;
 // let userGuess = +prompt("Guess the number");
@@ -286,4 +286,45 @@ if (tempInDegrees > 30) {
   console.log("It is warm outside");
 } else {
   console.log("It is cold outside");
+}
+
+// ================ Switch case =================
+
+let day = 0;
+
+switch (day) {
+  case 0:
+    console.log("Sunday");
+  case 1:
+    console.log("Monday");
+  case 2:
+    console.log("Tuesday");
+  case 3:
+    console.log("Wednesday");
+  case 4:
+    console.log("Thursday");
+  case 5:
+    console.log("Friday");
+  case 6:
+    console.log("Saturday");
+  default:
+    console.log("Invalid day");
+}
+
+// ================ While loop ===================
+
+// 0 se 9
+// dry don't repeat yourself
+
+let i = 0;
+
+while (i < 10) {
+  console.log(i);
+  i++;
+}
+
+// ================ for loop ======================
+
+for (let i = 0; i < 10; i++) {
+  console.log(i);
 }
