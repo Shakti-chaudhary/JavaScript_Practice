@@ -1,3 +1,5 @@
+// Basic programming in javascript
+
 // "use strict";
 
 console.log("Hello World");
@@ -131,3 +133,20 @@ let age2 = 22;
 console.log(typeof age2);
 console.log(String(age2));
 console.log(typeof (age2 + ""));
+
+// ================= String concatenation ==============
+
+let string1 = "Mohit";
+let string2 = "Kumar";
+
+console.log(string1 + " " + string2);
+console.log(string1.concat(" ", string2));
+
+let number1 = "22";
+let number2 = "12";
+
+let newNumber = number1 + number2;
+let newNumber1 = +number1 + +number2; // convert string to number and adding
+
+console.log(newNumber);
+console.log(newNumber1);
