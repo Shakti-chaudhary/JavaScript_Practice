@@ -223,3 +223,24 @@ console.log(num3 !== num2);
 // undefined
 // 0
 // NaN
+
+// =============== if else condition ======================
+
+let age4 = 21;
+if (age4 >= 18) {
+  console.log("You are eligible to vote");
+} else {
+  console.log("You are not eligible to vote");
+}
+if (age4 % 2 == 0) {
+  console.log("even");
+} else {
+  console.log("odd");
+}
+
+// =============== ternary operator =====================
+
+let age5 = 21;
+let result =
+  age5 >= 18 ? "You are eligible to vote" : "You are not eligible to vote";
+console.log(result);
