@@ -44,3 +44,20 @@ fruit1.unshift("pineapple");
 // unshift adds an element to the beginning of an array and return the new length
 let unshiftItem = fruit1.unshift("mango");
 console.log(fruit1, " unshifted item is: ", unshiftItem);
+
+//  =========== Primitive vs Reference data types ============
+
+let num1 = 6;
+let num2 = num1;
+num1 = 7;
+
+console.log(num1, num2);
+
+// reference types
+// array
+
+let studentId = ["A", "B", "C"];
+let studentId2 = studentId;
+console.log(studentId, studentId2);
+studentId[1] = "D";
+console.log(studentId, studentId2);
