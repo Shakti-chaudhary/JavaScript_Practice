@@ -245,7 +245,7 @@ let result =
   age5 >= 18 ? "You are eligible to vote" : "You are not eligible to vote";
 console.log(result);
 
-// ================= && || operators =================
+// ================= && || operators ====================
 
 let age6 = 21;
 let result1 = "Pass";
@@ -323,8 +323,29 @@ while (i < 10) {
   i++;
 }
 
-// ================ for loop ======================
+// ================ For loop ======================
 
 for (let i = 0; i < 10; i++) {
   console.log(i);
 }
+
+// ================ Break and Continue ============
+
+for (let i = 0; i < 10; i++) {
+  if (i == 5) {
+    break; // break the loop
+  }
+  if (i === 3) {
+    continue; // skip the current iteration
+  }
+  console.log(i);
+}
+
+// ================ Do while loop ==================
+
+let i1 = 0;
+
+do {
+  console.log(i1);
+  i1++;
+} while (i1 < 10 && i1 >= 1);
