@@ -23,7 +23,7 @@ console.log(Array.isArray(fruit));
 // [ "apple", "banana", "orange" ]
 //    0         1          2
 
-//  ================== Arrays methods =====================
+//  ================== Arrays methods ========================
 
 let fruit1 = ["apple", "banana", "orange"];
 
@@ -60,4 +60,57 @@ let studentId = ["A", "B", "C"];
 let studentId2 = studentId;
 console.log(studentId, studentId2);
 studentId[1] = "D";
+studentId.push("E");
 console.log(studentId, studentId2);
+
+//  ============= Clone an array =======================
+
+// how to clone array
+
+let array1 = ["item1", "item2", "item3"];
+// let array2 = ["item1", "item2", "item3"];
+
+// let array2 = array1.slice(0); // most performant
+// let array2 = [...array1]; //new way
+
+// how to concatenate two arrays
+
+let array2 = [].concat(array1);
+
+console.log(array1, array2);
+console.log(array1 === array2);
+
+// ============== Loops in array ===================
+
+// for loop
+
+for (let i = 0; i < array1.length; i++) {
+  console.log(array1[i]);
+}
+
+// use const for creating an array
+
+const fruits = ["apple", "banana", "orange"];
+fruits.push("kiwi");
+console.log(fruits);
+
+// while loop
+
+let i = 0;
+while (i < fruits.length) {
+  console.log(fruits[i]);
+  i++;
+}
+
+// for of loop in array
+
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+
+//  for in loop in array
+
+for (let index in fruits) {
+  console.log(index);
+  console.log(fruits[index]);
+}
