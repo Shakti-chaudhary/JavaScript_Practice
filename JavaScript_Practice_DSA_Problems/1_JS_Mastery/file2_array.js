@@ -114,3 +114,11 @@ for (let index in fruits) {
   console.log(index);
   console.log(fruits[index]);
 }
+
+//  ============ Array destructuring =================
+
+let [fruitOne, fruitTwo, fruitThree] = fruits;
+// let [fruitOne, fruitTwo, fruitThree] = [...fruits];
+// let [fruitOne, , fruitThree] = fruits;
+// console.log(fruitOne, fruitThree);
+console.log(fruitOne, fruitTwo, fruitThree);
