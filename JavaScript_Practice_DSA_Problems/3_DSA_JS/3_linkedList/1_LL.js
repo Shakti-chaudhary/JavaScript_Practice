@@ -16,10 +16,16 @@ class Node {
 }
 class LinkedList {
   constructor(data) {
-    const newNode = new Node(data);
-    this.head = newNode;
-    this.tail = newNode;
-    this.length = 1;
+    if (data === undefined) {
+      this.head = null;
+      this.tail = null;
+      this.length = 0;
+    } else {
+      const newNode = new Node(data);
+      this.head = newNode;
+      this.tail = newNode;
+      this.length = 1;
+    }
   }
   // ============ push method =====================
   push(data) {
@@ -27,7 +33,6 @@ class LinkedList {
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
-      this.length++;
     } else {
       this.tail.next = newNode;
       this.tail = newNode;
@@ -58,15 +63,55 @@ class LinkedList {
 
     return current;
   }
+  // ============== UnShift ======================
+  unshift(data) {
+    const newNode = new Node(data);
+    const currentHead = this.head;
+    if (!currentHead) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = currentHead;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
 }
+
+// ===== Creating linked list with one data ======
+
 let newLinkedList = new LinkedList(1);
+
+// push method
+
 newLinkedList.push(2);
 console.log(newLinkedList);
 console.log(newLinkedList.length);
+
+// ===== Creating linked list with no data ======
+
+let newLinkedList1 = new LinkedList();
+console.log(newLinkedList1);
+newLinkedList1.push(3);
+newLinkedList1.push(12);
+newLinkedList1.push(931);
+newLinkedList1.push(365);
+console.log(newLinkedList1);
+
+// ============ Pop method ================
+
 console.log(newLinkedList.pop());
 console.log(newLinkedList);
 console.log(newLinkedList.length);
+
 newLinkedList.pop();
 console.log(newLinkedList);
+
 console.log(newLinkedList.pop());
 console.log(newLinkedList);
+
+// ============ Unshift method ================
+
+console.log(newLinkedList.unshift(14));
+console.log(newLinkedList.unshift(4));
