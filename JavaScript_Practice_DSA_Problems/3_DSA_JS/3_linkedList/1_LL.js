@@ -77,6 +77,17 @@ class LinkedList {
     this.length++;
     return this;
   }
+  shift() {
+    if (!this.head) return undefined;
+    const currentHead = this.head;
+    this.head = currentHead.next;
+    this.length--;
+    if (this.length === 0) {
+      this.tail = null;
+    }
+    currentHead.next = null;
+    return currentHead;
+  }
 }
 
 // ===== Creating linked list with one data ======
@@ -99,7 +110,7 @@ newLinkedList1.push(931);
 newLinkedList1.push(365);
 console.log(newLinkedList1);
 
-// ============ Pop method ================
+// ============ Pop method ===================
 
 console.log(newLinkedList.pop());
 console.log(newLinkedList);
@@ -115,3 +126,12 @@ console.log(newLinkedList);
 
 console.log(newLinkedList.unshift(14));
 console.log(newLinkedList.unshift(4));
+
+// ============ Shift method ================
+
+console.log(newLinkedList.shift());
+console.log(newLinkedList);
+console.log(newLinkedList.shift());
+console.log(newLinkedList);
+console.log(newLinkedList.shift());
+console.log(newLinkedList);
