@@ -88,6 +88,47 @@ class LinkedList {
     currentHead.next = null;
     return currentHead;
   }
+  get(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    let current = this.head;
+    for (let i = 0; i < index; i++) {
+      current = current.next;
+    }
+    return current;
+  }
+  set(index, data) {
+    let current = this.get(index);
+    if (current) {
+      current.data = data;
+      return true;
+    }
+    return false;
+  }
+
+  insert(index, data) {
+    if (index === 0) return this.unshift(data);
+    if (index === this.length) return this.push(data);
+    if (index < 0 || index > this.length) return false;
+
+    const newNode = new Node(data);
+    let current = this.get(index - 1);
+    newNode.next = current.next;
+    current.next = newNode;
+    this.length++;
+    return true;
+  }
+  remove(index, data) {
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+    if (index < 0 || index >= this.length) return undefined;
+
+    let before = this.get(index - 1);
+    let current = before.next;
+    before.next = current.next;
+    current.next = null;
+    this.length--;
+    return current;
+  }
 }
 
 // ===== Creating linked list with one data ======
@@ -135,3 +176,35 @@ console.log(newLinkedList.shift());
 console.log(newLinkedList);
 console.log(newLinkedList.shift());
 console.log(newLinkedList);
+
+//  ============ Get method ================
+
+console.log(newLinkedList1.get(2));
+console.log(newLinkedList1.get(2).data);
+
+//  ============ Set method ================
+
+console.log(newLinkedList1.set(2, 44));
+console.log(newLinkedList1.get(2));
+console.log(newLinkedList1.get(2).data);
+
+//  ============ Insert method ================
+
+let newLL = new LinkedList();
+console.log(newLL);
+console.log(newLL.get(0));
+
+newLL.insert(0, 1);
+console.log(newLL.insert(1, 2));
+console.log(newLL.insert(1, 4));
+
+console.log(newLL);
+console.log(newLL.length);
+
+// ============ Remove method ================
+
+console.log(newLL.remove(3));
+console.log(newLL.remove(1));
+console.log(newLL.remove(0));
+console.log(newLL);
+console.log(newLL.length);
