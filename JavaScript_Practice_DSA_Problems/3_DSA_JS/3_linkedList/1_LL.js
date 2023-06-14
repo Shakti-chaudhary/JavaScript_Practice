@@ -129,6 +129,20 @@ class LinkedList {
     this.length--;
     return current;
   }
+  reverse() {
+    let current = this.head;
+    this.head = this.tail;
+    this.tail = current;
+    let next = current.next;
+    let prev = null;
+    while (next) {
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
+    return this;
+  }
 }
 
 // ===== Creating linked list with one data ======
@@ -208,3 +222,8 @@ console.log(newLL.remove(1));
 console.log(newLL.remove(0));
 console.log(newLL);
 console.log(newLL.length);
+
+// ============ Reverse method ================
+
+console.log(newLinkedList1);
+console.log(newLinkedList1.reverse());
