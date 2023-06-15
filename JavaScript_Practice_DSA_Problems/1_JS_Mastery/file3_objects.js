@@ -79,3 +79,27 @@ const person1 = {
 // obj[key2] = value2;
 
 console.log(person1);
+
+//  ====================== Spread operator =======================
+
+const obj1 = {
+  key1: "value1",
+  key2: "value2",
+};
+const obj2 = {
+  key1: "value",
+  key3: "value3",
+  key4: "value4",
+};
+const newObject = {
+  ...obj1,
+  ...obj2,
+  key5: "value5",
+}; // Overwrite obj1 and obj2 key if they are same
+
+console.log(newObject);
+
+const newObject2 = {
+  ..."abc",
+}; // indexes add as a key value pair
+console.log(newObject2);
