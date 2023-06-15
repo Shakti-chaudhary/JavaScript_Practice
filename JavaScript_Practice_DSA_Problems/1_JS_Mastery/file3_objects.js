@@ -46,11 +46,36 @@ for (const key in person) {
   console.log(typeof person[key]);
 }
 
-let keys = Object.keys(person);
-console.log(keys);
+// let keys = Object.keys(person);
+// console.log(keys);
 
 // for of loop
 
 for (const iterator of Object.keys(person)) {
+  console.log(iterator);
   console.log(person[iterator]);
 }
+
+// ======================= Computed properties ==================
+
+const key1 = "email";
+const key2 = "phone";
+
+const value1 = "nqH9R@example.com";
+const value2 = "123456789";
+
+// const object = {
+// objkey1 : "myvalue1",
+// objkey2 : "myvalue2",
+// }
+
+const person1 = {
+  [key1]: value1,
+  [key2]: value2,
+};
+
+// const obj = {};
+// obj[key1] = value1;
+// obj[key2] = value2;
+
+console.log(person1);
