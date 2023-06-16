@@ -56,7 +56,7 @@ for (const iterator of Object.keys(person)) {
   console.log(person[iterator]);
 }
 
-// ======================= Computed properties ==================
+// =============== Computed properties ==================
 
 const key1 = "email";
 const key2 = "phone";
@@ -80,7 +80,7 @@ const person1 = {
 
 console.log(person1);
 
-//  ====================== Spread operator =======================
+//  ====================== Spread operator ================
 
 const obj1 = {
   key1: "value1",
@@ -103,3 +103,22 @@ const newObject2 = {
   ..."abc",
 }; // indexes add as a key value pair
 console.log(newObject2);
+
+// =============== Objest destructuring =================
+
+const band = {
+  bandName: "led zepplin",
+  famousSong: "stairway to heaven",
+  year: 1968,
+  anotherFamousSong: "kasmir ever",
+};
+
+// const bandName = band.bandName;
+// const famousSong = band.famousSong;
+// console.log(bandName, " -  ", famousSong);
+
+const { bandName, famousSong } = band; // keep name same as keys in object
+console.log(bandName, " -  ", famousSong);
+
+const { bandName: bandName1, famousSong: famousSong1, ...restProps } = band; // store in another variable.
+console.log(bandName1, " -  ", famousSong1, " - ", restProps);
