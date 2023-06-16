@@ -122,3 +122,32 @@ console.log(bandName, " -  ", famousSong);
 
 const { bandName: bandName1, famousSong: famousSong1, ...restProps } = band; // store in another variable.
 console.log(bandName1, " -  ", famousSong1, " - ", restProps);
+
+// ================= Object inside array ==================
+// very useful in real world application
+
+const users = [
+  {
+    userId: 1,
+    firstName: "John",
+    gender: "Male",
+  },
+  {
+    userId: 1,
+    firstName: "Rohan",
+    gender: "Male",
+  },
+  {
+    userId: 2,
+    firstName: "Jane",
+    gender: "feMale",
+  },
+];
+for (let user of users) {
+  console.log(user);
+}
+
+// ================== Nested destructuring =================
+
+const [{ firstName: userFirstName }, , { gender }] = users;
+console.log(userFirstName, " - ", gender);
