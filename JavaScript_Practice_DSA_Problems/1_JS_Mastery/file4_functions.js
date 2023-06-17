@@ -63,3 +63,41 @@ hello();
 function hello() {
   console.log("Hello");
 }
+
+// ================== Function inside function ======
+
+function app() {
+  const myFunc = () => {
+    console.log("hello from myFunc");
+  };
+
+  const addTwo = (num1, num2) => {
+    return num1 + num2;
+  };
+  const multiplyTwo = (num1, num2) => num1 * num2;
+
+  console.log("inside app");
+  myFunc();
+  console.log(addTwo(3, 5));
+}
+
+app();
+
+//  ================= Lexical scope ==================
+
+function myApp() {
+  const myVar = "hello";
+  function myFunc() {
+    const myVar = "hi";
+    function callMe() {
+      const myVar = "hey";
+      console.log("function callMe");
+      let mydd = myVar;
+      console.log(mydd);
+    }
+    callMe();
+  }
+  myFunc();
+  console.log(myVar);
+}
+myApp();
