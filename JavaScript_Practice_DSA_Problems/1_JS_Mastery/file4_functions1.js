@@ -43,3 +43,36 @@ function addThree(...numbers) {
 }
 console.log(addThree(1, 2, 3, 4, 5));
 console.log(addThree(1));
+
+//  ================== Parameters destructuring ===========
+
+// use with object
+// use in react more
+
+const person = {
+  firstName: "John",
+  gender: "male",
+};
+
+// function printDetails(obj) {
+//   console.log(obj.firstName);
+//   console.log(obj.gender);
+// }
+
+function printDetails({ firstName, gender }) {
+  console.log(firstName);
+  console.log(gender);
+}
+
+printDetails(person);
+
+// ============== Callback function =================
+
+function myFunc1() {
+  console.log("inside my func 2");
+}
+function myFunc(callback) {
+  callback(); // call function
+  console.log(callback); // print function
+}
+myFunc(myFunc1);
