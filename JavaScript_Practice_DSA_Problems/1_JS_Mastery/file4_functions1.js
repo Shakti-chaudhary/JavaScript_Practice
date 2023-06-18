@@ -67,6 +67,7 @@ function printDetails({ firstName, gender }) {
 printDetails(person);
 
 // ============== Callback function =================
+// Also high order function
 
 function myFunc1() {
   console.log("inside my func 2");
@@ -76,3 +77,17 @@ function myFunc(callback) {
   console.log(callback); // print function
 }
 myFunc(myFunc1);
+
+//  ============= Function returning function ===========
+// Also high order function
+
+function myFunc2() {
+  function hello() {
+    console.log("inside my func 2");
+  }
+  return hello;
+}
+
+const answer = myFunc2();
+answer();
+console.log(answer);
