@@ -3,6 +3,7 @@
 // objects don't have index
 
 // how to create an object
+// object literal syntax :-
 
 const person = {
   name: "John",
