@@ -83,3 +83,12 @@ const obj2 = Object.assign({}, obj);
 obj.key3 = "value3";
 console.log(obj2);
 console.log(obj);
+
+// optional chaining
+
+const user = {
+  firstName: "Akshit",
+  // address: { houseNumber: "1234" },
+};
+console.log(user.firstName);
+console.log(user?.address?.houseNumber); // using ? not get error show undefined
