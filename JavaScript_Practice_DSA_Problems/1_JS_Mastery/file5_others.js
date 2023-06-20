@@ -70,3 +70,16 @@ let person1 = new Map([
   ["age", 23],
 ]);
 console.log(person1);
+
+// clone using Object.assign
+
+const obj = {
+  key1: "value1",
+  key2: "value2",
+};
+
+// const obj2 = {...obj}; // cloning new way
+const obj2 = Object.assign({}, obj);
+obj.key3 = "value3";
+console.log(obj2);
+console.log(obj);
