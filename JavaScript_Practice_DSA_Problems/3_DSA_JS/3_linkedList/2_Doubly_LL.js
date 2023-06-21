@@ -34,14 +34,62 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+  pop() {
+    if (this.length === 0) return undefined;
+    const temp = this.tail;
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.tail = temp.prev;
+      this.tail.next = null;
+      temp.prev = null;
+    }
+    this.length--;
+    return temp;
+  }
+  unshift(data) {
+    const newNode = new Node(data);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head.prev = newNode;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
 }
+
 // ============== Creating DLL ====================
 
 const newList = new DoublyLinkedList();
+
+// Push
+
 newList.push(1);
 newList.push(2);
 newList.push(5);
 console.log(newList);
 
 const newList1 = new DoublyLinkedList(22);
+console.log(newList1);
+
+// =============== Pop ==========================
+
+console.log(newList.pop());
+console.log(newList);
+
+console.log(newList1.pop());
+console.log(newList1);
+console.log(newList1.pop());
+
+// ============ Unshift ======================
+
+newList.unshift(61);
+console.log(newList);
+
+newList1.unshift(3);
 console.log(newList1);
