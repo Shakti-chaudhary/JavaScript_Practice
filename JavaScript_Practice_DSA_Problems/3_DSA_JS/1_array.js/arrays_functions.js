@@ -108,3 +108,106 @@ console.log(numbers5.findIndex((element) => element === 40));
 // includes
 
 console.log(vegetables.includes("carrot"));
+
+// entries
+
+// console.log(vegetables.entries());
+
+for (const vegetable of vegetables.entries()) {
+  console.log(vegetable);
+}
+
+// every
+
+console.log(vegetables.every((element) => element === "carrot"));
+
+// some
+
+console.log(numbers.some((element) => element > 25));
+
+// fill
+
+const numbers6 = [1, 2, 3, 4, 5];
+numbers6.fill(1, 2, 5);
+console.log(numbers6);
+
+// copyWithin
+
+const num = [1, 2, 3, 4, 5];
+const copiedNumbers = num.copyWithin(0, 3, 5);
+
+console.log(copiedNumbers);
+
+// valueOf
+
+const myArray = [10, 20, 30];
+const value = myArray.valueOf();
+
+console.log(value);
+
+// forEach
+
+const cities = ["New York", "London", "Paris", "Tokyo"];
+
+cities.forEach((city) => {
+  console.log(city);
+});
+
+// map
+
+const capitalizedColors = colors.map((color) => color.toUpperCase());
+console.log(capitalizedColors);
+
+// filter
+
+let filterCities = cities.filter((city) => city.length > 5);
+console.log(filterCities);
+
+// reduce
+// ------------------------->
+console.log(
+  copiedNumbers.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  }, 22)
+);
+
+// reduceRight
+//  <-----------------------
+console.log(
+  copiedNumbers.reduceRight((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  })
+);
+
+// flat
+
+const numbers7 = [1, 2, 3, [4, 5, 6]];
+const flatNumbers = numbers7.flat();
+console.log(flatNumbers);
+
+// flatMap
+
+const words = ["Hello", "world", "how", "are", "you"];
+const flattenedWords = words.flatMap((word) => word.split(""));
+
+console.log(flattenedWords);
+
+// from
+
+const string = "Hello, world!";
+const charArray = Array.from(string);
+
+console.log(charArray);
+
+// keys
+
+console.log(words.keys());
+
+// delete Operator
+
+console.log(delete words[3]);
+console.log(words);
+
+// length
+
+console.log(charArray.length);
