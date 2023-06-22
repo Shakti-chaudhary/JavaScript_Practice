@@ -106,6 +106,32 @@ class DoublyLinkedList {
     }
     return false;
   }
+  insert(index, data) {
+    if (index < 0 || index > this.length) return false;
+    if (index === 0) return this.unshift(data);
+    if (index === this.length) return this.push(data);
+    const newNode = new Node(data);
+    const before = this.get(index - 1);
+    const after = before.next;
+    newNode.next = after;
+    before.next = newNode;
+    newNode.prev = before;
+    after.prev = newNode;
+    this.length++;
+    return this;
+  }
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+    const current = this.get(index);
+    current.prev.next = current.next;
+    current.next.prev = current.prev;
+    current.next = null;
+    current.prev = null;
+    this.length--;
+    return current;
+  }
 }
 
 // ============== Creating DLL ====================
@@ -169,3 +195,23 @@ console.log(newList1.set(1, 77));
 
 console.log(newList1.set(0, 12));
 console.log(newList1);
+
+// =================== Insert ====================
+
+console.log(newList.insert(0, 10));
+console.log(newList.insert(5, 15));
+console.log(newList);
+console.log(newList.insert(2, 33));
+console.log(newList.insert(8, 33));
+console.log(newList);
+
+// ================== Remove ===================
+
+console.log(newList.length);
+console.log(newList.remove(0));
+console.log(newList.length);
+console.log(newList.remove(5));
+console.log(newList.length);
+console.log(newList.remove(2));
+console.log(newList.length);
+console.log(newList);
