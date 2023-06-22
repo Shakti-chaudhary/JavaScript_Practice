@@ -75,6 +75,37 @@ class DoublyLinkedList {
     this.length--;
     return temp;
   }
+  get(index) {
+    if (index < 0 || index >= this.length) return undefined;
+
+    let temp = this.head;
+    let counter = 0;
+    const middleIndex = Math.floor(this.length / 2);
+
+    if (index < middleIndex) {
+      while (counter < index) {
+        temp = temp.next;
+        counter++;
+      }
+    } else {
+      counter = this.length - 1;
+      temp = this.tail;
+      while (counter > index) {
+        temp = temp.prev;
+        counter--;
+      }
+    }
+
+    return temp;
+  }
+  set(index, data) {
+    let temp = this.get(index);
+    if (temp) {
+      temp.data = data;
+      return true;
+    }
+    return false;
+  }
 }
 
 // ============== Creating DLL ====================
@@ -116,3 +147,25 @@ console.log(newList);
 newList1.shift(3);
 console.log(newList1);
 console.log(newList1.shift());
+
+// ================= Get  =======================
+
+console.log(newList.push(0));
+console.log(newList.push(5));
+
+console.log(newList.get(0));
+console.log(newList.get(1));
+console.log(newList.get(2));
+console.log(newList.get(3));
+console.log(newList.get(4));
+
+// ================ Set ========================
+
+console.log(newList1.set(0, 100));
+newList1.push(100);
+console.log(newList1.set(0, 100));
+console.log(newList1);
+console.log(newList1.set(1, 77));
+
+console.log(newList1.set(0, 12));
+console.log(newList1);
