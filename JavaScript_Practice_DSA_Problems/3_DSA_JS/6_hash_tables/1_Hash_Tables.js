@@ -10,3 +10,8 @@ class HashTable {
     return hash;
   }
 }
+
+// =========== Creating a hash table ===============
+
+const hashTable = new HashTable();
+console.log(hashTable);
