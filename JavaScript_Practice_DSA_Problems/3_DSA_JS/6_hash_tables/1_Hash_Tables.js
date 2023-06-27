@@ -24,6 +24,17 @@ class HashTable {
     }
     return undefined;
   }
+  keys() {
+    let allKeys = [];
+    for (let i = 0; i < this.dataMap.length; i++) {
+      if (this.dataMap[i]) {
+        for (let j = 0; j < this.dataMap[i].length; j++) {
+          allKeys.push(this.dataMap[i][j][0]);
+        }
+      }
+    }
+    return allKeys;
+  }
 }
 
 // =========== Creating a hash table ===============
@@ -44,3 +55,10 @@ console.log(hashTable);
 console.log(hashTable.get("name"));
 console.log(hashTable.get("age"));
 console.log(hashTable.get("gender"));
+
+// Keys method
+
+console.log(hashTable.keys());
+
+hashTable.set("email", "nqH9R@example.com");
+console.log(hashTable.keys());
