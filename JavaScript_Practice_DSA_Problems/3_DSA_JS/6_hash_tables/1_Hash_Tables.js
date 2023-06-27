@@ -62,3 +62,24 @@ console.log(hashTable.keys());
 
 hashTable.set("email", "nqH9R@example.com");
 console.log(hashTable.keys());
+
+// ============ Hash table based problem ===========
+
+function itemInCommon(arr1, arr2) {
+  let obj = {};
+  for (let i = 0; i < arr1.length; i++) {
+    obj[arr1[i]] = true;
+  }
+  for (let j = 0; j < arr2.length; j++) {
+    if (obj[arr2[j]]) {
+      return true;
+    }
+  }
+}
+
+let array1 = [1, 3, 5];
+let array2 = [2, 4, 5];
+
+console.log(itemInCommon(array1, array2));
+
+// Time complexity is O(n) // {O(2n)} 2 drop as a constant
