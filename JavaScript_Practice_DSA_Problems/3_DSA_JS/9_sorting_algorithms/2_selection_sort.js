@@ -8,7 +8,9 @@ function selectionSort(array) {
         minIndex = j;
       }
     }
-    [array[i], array[minIndex]] = [array[minIndex], array[i]];
+    if (i !== minIndex) {
+      [array[i], array[minIndex]] = [array[minIndex], array[i]];
+    }
   }
   return array;
 }
