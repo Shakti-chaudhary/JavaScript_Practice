@@ -15,7 +15,7 @@ function funcOne() {
 
 funcOne();
 
-// ===== Recursion problem { Factorial } ============
+// ===== Recursion problem { Factorial of N } ============
 
 function factorial(n) {
   if (n === 1) {
