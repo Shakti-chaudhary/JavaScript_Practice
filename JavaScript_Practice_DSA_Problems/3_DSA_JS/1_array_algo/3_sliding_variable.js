@@ -32,7 +32,11 @@ function findMinLength(array, value) {
       left++;
     }
   }
-  return minLength;
+  if (minLength === nums.length) {
+    return 0;
+  } else {
+    return minLength;
+  }
 }
 
 console.log(findMinLength([2, 3, 1, 2, 4, 3], 6)); // 2
