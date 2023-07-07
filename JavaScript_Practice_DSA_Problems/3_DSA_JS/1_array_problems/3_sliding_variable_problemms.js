@@ -46,3 +46,28 @@ function lengthOfLongestSubstring(s) {
 console.log(lengthOfLongestSubstring("abcabcbb"));
 console.log(lengthOfLongestSubstring("bbbbb"));
 console.log(lengthOfLongestSubstring("pwwkew"));
+
+// Problem 3. https://leetcode.com/problems/longest-repeating-character-replacement/
+
+function characterReplacement(s, k) {
+  let map = new Map();
+  let n = k;
+  let L = 0;
+  let length = 0;
+
+  for (let R in s) {
+    if (!map.has(s[R])) {
+      map.set(s[R], R);
+    }
+
+    if (s[L] !== s[R] && n > 0) {
+      length = Math.max(length, R - L);
+      n--;
+    } else {
+      n = k;
+      L = map.has(s[R]);
+    }
+  }
+  return length;
+}
+console.log(characterReplacement("ABAB", 2));
