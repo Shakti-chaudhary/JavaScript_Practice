@@ -49,25 +49,30 @@ console.log(lengthOfLongestSubstring("pwwkew"));
 
 // Problem 3. https://leetcode.com/problems/longest-repeating-character-replacement/
 
-function characterReplacement(s, k) {
-  let map = new Map();
-  let n = k;
-  let L = 0;
-  let length = 0;
+function characterReplacement(str, k) {
+  let freq = new Map();
+  let maxFreq = 0,
+    maxLen = 0,
+    left = 0;
 
-  for (let R in s) {
-    if (!map.has(s[R])) {
-      map.set(s[R], R);
-    }
+  for (let i in str) {
+    freq.set(str[i], (freq.get(str[i]) || 0) + 1);
+    maxFreq = Math.max(maxFreq, freq.get(str[i]));
 
-    if (s[L] !== s[R] && n > 0) {
-      length = Math.max(length, R - L);
-      n--;
-    } else {
-      n = k;
-      L = map.has(s[R]);
+    while (i - left + 1 - maxFreq > k) {
+      freq.set(str[left], freq.get(str[left]) - 1);
+
+      if (freq.get(str[left]) === 0) {
+        freq.delete(str[left]);
+      }
+
+      left++;
     }
+    maxLen = Math.max(maxLen, i - left + 1);
   }
-  return length;
+  return maxLen;
 }
 console.log(characterReplacement("ABAB", 2));
+console.log(characterReplacement("AABABBA", 1));
+console.log(characterReplacement("abccde", 1));
+console.log(characterReplacement("aabccbb", 2));
