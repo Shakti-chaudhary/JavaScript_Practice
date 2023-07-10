@@ -1,5 +1,5 @@
 // ============ fast and slow pointers =====================
-// Floyd's tortoise and hare
+// Floyd's tortoise and hare algorithm
 
 // Q: Find the middle of a linked list with two pointers.
 // Time: O(n), Space: O(1)
@@ -57,3 +57,8 @@ function cycleStart(head) {
 
   return slow;
 }
+
+// formula of 2* slow = fast
+// 2*(P+C-X) = P+C+C-X
+// P-X = 0
+// P = X
