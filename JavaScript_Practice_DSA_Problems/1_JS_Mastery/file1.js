@@ -95,10 +95,7 @@ console.log(firstName2.toUpperCase());
 
 console.log(firstName2.toLowerCase());
 
-// slice()
-
-// Start index
-// End index
+// slice(Start index , End index)
 
 console.log(firstName2.slice(0, 2));
 
@@ -131,7 +128,7 @@ console.log(Number(age1));
 
 let age2 = 22;
 console.log(typeof age2);
-console.log(String(age2));
+console.log(typeof String(age2));
 console.log(typeof (age2 + ""));
 
 // ================= String concatenation ==============
@@ -140,7 +137,7 @@ let string1 = "Mohit";
 let string2 = "Kumar";
 
 console.log(string1 + " " + string2);
-console.log(string1.concat(" ", string2));
+console.log(string1.concat(" ", string2, " raja "));
 
 let number1 = "22";
 let number2 = "12";
@@ -148,10 +145,10 @@ let number2 = "12";
 let newNumber = number1 + number2;
 let newNumber1 = +number1 + +number2; // convert string to number and adding
 
-console.log(newNumber);
-console.log(newNumber1);
+console.log(typeof newNumber, newNumber);
+console.log(typeof newNumber1, newNumber1);
 
-// ================ Template string ===================
+// ================ Template litrals (string) ===================
 
 let age3 = 22;
 let name3 = "Mohit";
