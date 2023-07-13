@@ -63,3 +63,61 @@ const person3 = {
 };
 
 person3.about();
+
+// =============== Factory functions =====================
+// function (that function create object)
+// 2. add key value pair
+// 3. object ko return krega
+
+const userMethods = {
+  about: function () {
+    return `${this.firstName} is ${this.age} years old`;
+  },
+  is18: function () {
+    return this.age >= 18;
+  },
+};
+
+function createUser(firstName, lastName, email, age, address) {
+  // const user = {};
+  const user = Object.create(userMethods); // proto chaining
+  user.firstName = firstName;
+  user.lastName = lastName;
+  user.email = email;
+  user.age = age;
+  user.address = address;
+
+  // first way
+
+  // user.about = function () {
+  //   return `${this.firstName} is ${this.age} years old`;
+  // };
+  // user.is18 = function () {
+  //   return this.age >= 18;
+  // };
+
+  // Second way
+
+  // user.about = userMethods.about;
+  // user.is18 = userMethods.is18;
+
+  return user;
+}
+
+const user1 = createUser("Rachit", "Kumar", "rachit@gmail.com", 19, "India");
+console.log(user1.about(), " is 18 : ", user1.is18());
+
+// ================================================
+
+// offical ecmascript documentation
+// __proto__ === [[prototype]]  not same to prototype
+
+const obj1 = {
+  key1: "value1",
+  key2: "value2",
+};
+
+const obj2 = Object.create(obj1); // Set __proto__ property obj1 to obj 2
+
+obj2.key3 = "value3";
+console.log("key3 : ", obj2.key3, "and key2 : ", obj2.key2);
