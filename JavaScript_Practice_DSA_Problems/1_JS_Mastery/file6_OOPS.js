@@ -121,3 +121,5 @@ const obj2 = Object.create(obj1); // Set __proto__ property obj1 to obj 2
 
 obj2.key3 = "value3";
 console.log("key3 : ", obj2.key3, "and key2 : ", obj2.key2);
+
+console.log(userMethods.prototype);
