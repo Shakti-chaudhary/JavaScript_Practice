@@ -40,4 +40,27 @@ createUser.prototype.is18 = function () {
 let user = createUser("Rachit", "Kumar", "rachit@gmail.com", 19, "India");
 console.log(user.about());
 
-// ========================================================
+// ================= New keyword =====================
+// Constructer function { Create object }
+
+function CreateUser1(firstName, age) {
+  this.firstName = firstName;
+  this.age = age;
+}
+CreateUser1.prototype.about = function () {
+  console.log(this.firstName, " age is ", this.age);
+};
+const user1 = new CreateUser1("harshit", 6);
+
+// new keyword
+// 1. empty object this = {}
+// object.create(createUser.prototype);
+
+user1.about();
+
+for (let key in user1) {
+  console.log(key); // give all keys including prototypes
+  if (user1.hasOwnProperty(key)) {
+    console.log(key); // give only object main keys exclude prototypes key
+  }
+}
