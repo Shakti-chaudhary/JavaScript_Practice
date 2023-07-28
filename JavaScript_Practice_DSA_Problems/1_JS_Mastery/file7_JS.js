@@ -73,6 +73,7 @@ function func() {
   return function () {
     if (counter < 1) {
       console.log("Hi You Called Me");
+      counter++;
     } else {
       console.log("Mai already ek bar call ho chuka hoon!");
     }
