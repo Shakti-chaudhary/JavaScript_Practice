@@ -11,7 +11,8 @@ a {
   color: white;
 }
 .header {
-  min-height: 100vh;
+  position: relative;
+  min-height: 60vh;
   background-image: url("./bg-image.jpg");
   color: white;
   background-position: center;
@@ -36,4 +37,28 @@ a {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
+}
+.headline {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 2px solid red;
+  transform: translate(-50%, -50%);
+}
+.btn {
+  display: inline-block;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.btn-headline {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  font-weight: 700;
+}
+.section-todo {
+  margin-top: 5rem;
+  text-align: center;
 }
