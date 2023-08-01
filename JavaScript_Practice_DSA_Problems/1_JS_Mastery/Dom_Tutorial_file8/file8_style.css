@@ -18,6 +18,7 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  /* border: 2px solid red; */
 }
 
 .container {
@@ -31,12 +32,16 @@ a {
   display: flex;
   justify-content: space-between;
 }
-
+.nav > h1 {
+  display: flex;
+  align-items: center;
+}
 .nav-items {
   width: 40%;
   display: flex;
   justify-content: space-between;
   list-style-type: none;
+  align-items: center;
 }
 .headline {
   text-align: center;
@@ -61,4 +66,27 @@ a {
 .section-todo {
   margin-top: 5rem;
   text-align: center;
+}
+.form-todo {
+  min-height: 7vh;
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+.form-todo input {
+  min-height: 100%;
+  padding: 0.8rem;
+}
+.form-todo input[type="text"] {
+  width: 78%;
+  font-size: 1rem;
+}
+.form-todo input[type="submit"] {
+  width: 20%;
+  background: rgb(44, 55, 63);
+  color: white;
+  font-weight: bold;
+}
+.section-signup {
+  margin-top: 2rem;
 }
