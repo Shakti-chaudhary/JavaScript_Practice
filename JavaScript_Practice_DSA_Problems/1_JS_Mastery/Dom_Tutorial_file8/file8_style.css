@@ -28,7 +28,7 @@ a {
 }
 
 .nav {
-  min-height: 8vh;
+  min-height: 4rem;
   display: flex;
   justify-content: space-between;
 }
@@ -87,6 +87,22 @@ a {
   color: white;
   font-weight: bold;
 }
+
 .section-signup {
   margin-top: 2rem;
+  text-align: center;
+}
+.signupForm {
+  max-width: 800px;
+  width: 85%;
+  text-align: left;
+  margin: auto;
+}
+.signupForm label {
+  display: block;
+}
+.signupForm input {
+  margin: auto;
+  display: block;
+  width: 80%;
 }
