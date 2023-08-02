@@ -64,6 +64,7 @@ a {
   font-weight: 700;
 }
 .section-todo {
+  border: 2px solid yellow;
   margin-top: 5rem;
   text-align: center;
 }
@@ -89,10 +90,12 @@ a {
 }
 
 .section-signup {
+  border: 2px solid green;
   margin: 3rem auto;
   text-align: center;
   background: rgb(240, 240, 240);
   border-radius: 10px;
+  padding: 1rem;
 }
 .signupForm {
   max-width: 800px;
