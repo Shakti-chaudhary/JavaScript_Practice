@@ -27,7 +27,6 @@ a {
   margin: auto;
   width: 90%;
 }
-
 .nav {
   min-height: 4rem;
   display: flex;
@@ -64,7 +63,6 @@ a {
   margin-top: 1rem;
   font-weight: 700;
 }
-
 .section-todo {
   border: 2px solid yellow;
   margin-top: 5rem;
@@ -90,7 +88,6 @@ a {
   color: white;
   font-weight: bold;
 }
-
 .section-signup {
   border: 2px solid green;
   margin: 3rem auto;
@@ -107,20 +104,19 @@ a {
 }
 .signupForm label {
   display: block;
+  margin-bottom: 0.5rem;
 }
 .signupForm input {
   display: block;
   width: 100%;
   padding: 0.5rem;
 }
-
 .form-group {
   margin-top: 1rem;
 }
 .signupForm textarea {
   width: 100%;
 }
-
 .signup-btn {
   background: rgb(44, 55, 63);
   color: white;
