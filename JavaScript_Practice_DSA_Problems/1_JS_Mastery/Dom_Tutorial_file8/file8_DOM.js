@@ -25,3 +25,29 @@ console.log(navItem);
 
 const mainheading1 = document.getElementById("main-heading");
 console.log(mainheading1.textContent);
+mainheading1.textContent = "This is something else ";
+console.log(mainheading1.textContent); // also give all text hides text also
+
+console.log(mainheading1.innerText, "{ InnerText }"); // only visible text
+
+// Change the style of elements
+
+const mainHeading = document.querySelector("#main-heading");
+mainHeading.style.color = "blue";
+mainHeading.style.backgroundColor = "yellow";
+
+// get and set attributes
+
+const link = document.querySelector("a");
+console.log(link.getAttribute("href")); // get attribute
+link.setAttribute("href", "#changeAttribute");
+console.log(link.getAttribute("href").slice(1)); // get attribute
+
+// get multiple elements using getElements by class name
+// get multiple elements items using querySelectorAll
+
+const navItems = document.getElementsByClassName("nav-item"); // HTMLCollection
+console.log(navItems[0]);
+
+const navItems1 = document.querySelectorAll(".nav-item"); // NodeList
+console.log(navItems1);
