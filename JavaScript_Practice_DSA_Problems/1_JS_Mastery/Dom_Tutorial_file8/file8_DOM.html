@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="file8_style.css" />
+    <script src="file8_DOM.js" defer></script>
     <title>Document</title>
   </head>
   <body>
@@ -11,14 +12,14 @@
       <nav class="nav container">
         <h1 class="logo">Website</h1>
         <ul class="nav-items">
-          <li><a href="">Home</a></li>
-          <li><a href="">Todo</a></li>
-          <li><a href="">Sign Up</a></li>
+          <li class="nav-item"><a href="">Todo</a></li>
+          <li class="nav-item"><a href="">Home</a></li>
+          <li class="nav-item"><a href="">Sign Up</a></li>
         </ul>
       </nav>
 
       <div class="headline">
-        <h2>Manage your tasks.</h2>
+        <h2 id="main-heading">Manage your tasks.</h2>
         <button class="btn btn-headline">Learn More</button>
       </div>
     </header>
@@ -61,7 +62,5 @@
         <button type="submit" class="btn signup-btn">Submit</button>
       </form>
     </section>
-
-    <script src="file8_DOM.js"></script>
   </body>
 </html>
