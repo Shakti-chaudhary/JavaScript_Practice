@@ -49,5 +49,20 @@ console.log(link.getAttribute("href").slice(1)); // get attribute
 const navItems = document.getElementsByClassName("nav-item"); // HTMLCollection
 console.log(navItems[0]);
 
+const navItems2 = document.getElementsByTagName("a"); // HTMLCollection
+console.log(navItems2[0]);
+
 const navItems1 = document.querySelectorAll(".nav-item"); // NodeList
 console.log(navItems1);
+
+// Loop
+// we can't use forEach method to iterate through HTMLCollection
+// simple for loop
+// for of loop
+// forEach   { Array like object ---> indexing , length property }
+
+for (let i = 0; i < navItems.length; i++) {
+  const navItem = navItems2[i];
+  navItem.style.backgroundColor = "#fff";
+  navItem.style.color = "green";
+}
