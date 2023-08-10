@@ -61,8 +61,21 @@ console.log(navItems1);
 // for of loop
 // forEach   { Array like object ---> indexing , length property }
 
-for (let i = 0; i < navItems.length; i++) {
-  const navItem = navItems2[i];
+// for (let i = 0; i < navItems.length; i++) {
+//   const navItem = navItems2[i];
+//   navItem.style.backgroundColor = "#fff";
+//   navItem.style.color = "green";
+// }
+
+// for (let navItem of navItems2) {
+//   navItem.style.backgroundColor = "#fff";
+//   navItem.style.color = "green";
+// }
+
+// changing HTMLCollection to array to use forEach methods
+
+let navItems3 = Array.from(navItems2);
+navItems3.forEach((navItem) => {
   navItem.style.backgroundColor = "#fff";
   navItem.style.color = "green";
-}
+});
