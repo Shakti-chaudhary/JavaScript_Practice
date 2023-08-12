@@ -43,17 +43,13 @@ console.log(link.getAttribute("href")); // get attribute
 link.setAttribute("href", "#changeAttribute");
 console.log(link.getAttribute("href").slice(1)); // get attribute
 
-// get multiple elements using getElements by class name
-// get multiple elements items using querySelectorAll
+// ===== get multiple elements using getElements by class name ========
 
-const navItems = document.getElementsByClassName("nav-item"); // HTMLCollection
+const navItems = document.getElementsByClassName("nav-item"); // return HTMLCollection
 console.log(navItems[0]);
 
-const navItems2 = document.getElementsByTagName("a"); // HTMLCollection
-console.log(navItems2[0]);
-
-const navItems1 = document.querySelectorAll(".nav-item"); // NodeList
-console.log(navItems1);
+const navItems2 = document.getElementsByTagName("a"); // return HTMLCollection
+console.log(navItems2);
 
 // Loop
 // we can't use forEach method to iterate through HTMLCollection
@@ -79,3 +75,17 @@ navItems3.forEach((navItem) => {
   navItem.style.backgroundColor = "#fff";
   navItem.style.color = "green";
 });
+
+// ========= get multiple elements items using querySelectorAll =======
+
+const navItems1 = document.querySelectorAll("a"); // return NodeList
+console.log(navItems1);
+
+// Can use for , for of and forEach loop
+
+// ===================== InnerHTML ==========================
+
+const innerHeadline = document.querySelector(".headline");
+// console.log(innerHeadline.innerHTML);
+innerHeadline.innerHTML = "<h2>Here I am ! </h2>";
+innerHeadline.innerHTML += '<button class= "btn"> Learn More </button>';
