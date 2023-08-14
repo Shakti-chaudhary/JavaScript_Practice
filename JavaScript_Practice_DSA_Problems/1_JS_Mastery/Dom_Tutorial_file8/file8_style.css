@@ -92,6 +92,19 @@ a {
   color: white;
   font-weight: bold;
 }
+.todo-list {
+  text-align: left;
+  font-size: 1.2rem;
+  list-style: none;
+}
+.todo-list li {
+  padding: 0.7rem;
+  background: #444;
+  color: cyan;
+  margin-top: 1rem;
+  text-transform: capitalize;
+}
+
 .section-signup {
   border: 2px solid green;
   margin: 3rem auto;
