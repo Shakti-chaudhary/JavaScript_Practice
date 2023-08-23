@@ -50,3 +50,38 @@ getTwoNumberAndAdd(
     console.log("please number only ");
   }
 );
+
+// callbacks , callback hell , pyramid of doom // check online
+// asynchronous programming
+
+// ================= Promise =====================
+
+const bucket = ["coffee", "chips", "vegetables", "salt", "rice"];
+
+const friedRicePromise = new Promise((resolve, reject) => {
+  if (
+    bucket.includes("vegetables") &&
+    bucket.includes("salt") &&
+    bucket.includes("rice")
+  ) {
+    resolve("friedRice");
+  } else {
+    reject("Could't make it");
+  }
+});
+
+// consume
+// how to consume
+
+friedRicePromise
+  .then(
+    (myfriedRice) => {
+      console.log("lets eat ", myfriedRice);
+    }
+    //   (error) => {
+    //     console.log(error, " Error ***");
+    //   } //? work as .catch also
+  )
+  .catch((error) => {
+    console.log(error, " Error ***");
+  });
