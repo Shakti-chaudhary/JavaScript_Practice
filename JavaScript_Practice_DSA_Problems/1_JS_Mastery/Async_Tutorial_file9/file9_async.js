@@ -85,3 +85,77 @@ friedRicePromise
   .catch((error) => {
     console.log(error, " Error ***");
   });
+
+// function that return promise
+
+function ricePromise() {
+  return new Promise((resolve, reject) => {
+    if (
+      bucket.includes("vegetables") &&
+      bucket.includes("salt") &&
+      bucket.includes("rice")
+    ) {
+      resolve("friedRice");
+    } else {
+      reject("Could't make it");
+    }
+  });
+}
+
+ricePromise()
+  .then(
+    (myfriedRice) => {
+      console.log("Function returns a promise in this example: ", myfriedRice);
+    }
+    //   (error) => {
+    //     console.log(error, " Error ***");
+    //   } //? work as .catch also
+  )
+  .catch((error) => {
+    console.log(error, " Error ***");
+  });
+
+// promise && setTimeout
+
+// I want to resolve / reject promise after 2 seconds
+
+function myPromise() {
+  return new Promise((resolve, reject) => {
+    const value = true;
+    setTimeout(() => {
+      if (value) {
+        resolve();
+      } else {
+        reject();
+      }
+    }, 2000);
+  });
+}
+
+myPromise()
+  .then(() => {
+    console.log("Resolved: !!!");
+  })
+  .catch(() => {
+    console.log("Rejected : !!!");
+  });
+
+// ============= Promise.resolve
+// ============= Promise chaining
+// then() // then method hamesha promise return karta h
+
+function myPromise() {
+  return new Promise((resolve, reject) => {
+    resolve("foo");
+  });
+}
+
+myPromise()
+  .then((value) => {
+    console.log(value);
+    value += " bar ";
+    return value; // return Promise.resolve(value)
+  })
+  .then((value) => {
+    console.log(value);
+  });
