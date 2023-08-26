@@ -33,10 +33,28 @@ xhr.open("GET", URL);
 //   }
 // };
 
-xhr.onload = function () {
-  console.log("readyState : ", xhr.readyState);
-  const data = JSON.parse(xhr.response);
-  console.log(data);
-};
+// xhr.onload = function () {
+//   console.log("readyState : ", xhr.readyState);
+//   const data = JSON.parse(xhr.response);
+//   console.log(data);
+// };
 
 xhr.send();
+
+//  =========== error handling =====================
+
+const xhr2 = new XMLHttpRequest(); // for error handling
+
+xhr2.open("GET", "https://jsonplaceholder.typicode.com/postss"); // error in link
+
+xhr2.onload = () => {
+  if (xhr2.status >= 200 && xhr2.status < 300) {
+    console.log("readyState : ", xhr.readyState);
+    const data = JSON.parse(xhr2.response);
+    console.log(data);
+  } else {
+    console.log("something went wrong");
+  }
+};
+
+xhr2.send();
