@@ -6,3 +6,9 @@
 body {
   background-color: bisque;
 }
+.vertical-line {
+  margin: 15px 0 15px;
+  width: 100vh;
+  height: 2px;
+  background-color: black;
+}
