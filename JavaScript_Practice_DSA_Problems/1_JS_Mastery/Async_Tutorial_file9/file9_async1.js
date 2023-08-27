@@ -69,7 +69,7 @@ function sendRequest(method, url) {
       if (xhr3.status >= 200 && xhr3.status < 300) {
         resolve(xhr3.response);
       } else {
-        reject(new ErrorI("Something went wrong "));
+        reject(new Error("Something went wrong "));
       }
     };
     xhr.onerror = function () {
@@ -91,21 +91,69 @@ sendRequest("GET", URL)
     const id = data[3].id;
     return id;
   })
-  .then((data) => {
-    const url = `${URL}/${data}`;
-    const xhr4 = new XMLHttpRequest();
-    xhr4.open("GET", url);
-    xhr4.onload = function () {
-      if (xhr4.status >= 200 && xhr4.status < 300) {
-        console.log(xhr4.response);
-      } else {
-        reject(new ErrorI("Something went wrong "));
-      }
-    };
-    xhr4.send();
-
-    console.log(data);
+  .then((id) => {
+    const url = `${URL}/${id}sss`;
+    console.log(url);
+    return sendRequest("GET", url);
+  })
+  .then((newResponse) => {
+    const newData = JSON.parse(newResponse);
+    console.log(newData);
   })
   .catch((error) => {
     console.log("Error is : ", error);
+  });
+
+// =================== Fetch API ====================
+
+const fData = fetch(URL);
+fData
+  .then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("Something error in fetch : !!!");
+    }
+  })
+  .then((data) => {
+    console.log(data[5]);
+  })
+  .catch((error) => {
+    console.log("inside fetch catch");
+    console.log(error);
+  });
+
+// Fetch Post
+
+fetch("https://jsonplaceholder.typicode.com/posts", {
+  method: "POST",
+  body: JSON.stringify({
+    title: "foo",
+    body: "bar",
+    userId: 1,
+  }),
+  headers: {
+    "Content-type": "application/json; charset=UTF-8",
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+
+// ================= Async Await ==================
+
+async function getPosts() {
+  const response = await fetch(URL);
+  if (!response.ok) {
+    throw new Error("Something error in async await !!!");
+  }
+  const data = await response.json();
+  return data; // return promise
+}
+
+getPosts()
+  .then((data) => {
+    console.log(data[2]);
+  })
+  .catch((error) => {
+    console.log(error);
   });
