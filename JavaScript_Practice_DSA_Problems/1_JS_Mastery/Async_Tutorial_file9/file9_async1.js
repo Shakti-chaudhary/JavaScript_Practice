@@ -58,3 +58,54 @@ xhr2.onload = () => {
 };
 
 xhr2.send();
+
+// ============== Promisifying XHR request ===================
+
+function sendRequest(method, url) {
+  return new Promise(function (resolve, reject) {
+    const xhr3 = new XMLHttpRequest();
+    xhr3.open(method, url);
+    xhr3.onload = function () {
+      if (xhr3.status >= 200 && xhr3.status < 300) {
+        resolve(xhr3.response);
+      } else {
+        reject(new ErrorI("Something went wrong "));
+      }
+    };
+    xhr.onerror = function () {
+      reject(new Error("Something went wrong "));
+    };
+    xhr3.send();
+  });
+}
+
+sendRequest("GET", URL)
+  .then((response) => {
+    const data = JSON.parse(response);
+    console.log("check for error ");
+
+    return data;
+  })
+  .then((data) => {
+    console.log(data);
+    const id = data[3].id;
+    return id;
+  })
+  .then((data) => {
+    const url = `${URL}/${data}`;
+    const xhr4 = new XMLHttpRequest();
+    xhr4.open("GET", url);
+    xhr4.onload = function () {
+      if (xhr4.status >= 200 && xhr4.status < 300) {
+        console.log(xhr4.response);
+      } else {
+        reject(new ErrorI("Something went wrong "));
+      }
+    };
+    xhr4.send();
+
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log("Error is : ", error);
+  });
