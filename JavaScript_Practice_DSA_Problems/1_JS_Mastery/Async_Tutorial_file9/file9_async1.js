@@ -139,7 +139,7 @@ fetch("https://jsonplaceholder.typicode.com/posts", {
   .then((response) => response.json())
   .then((json) => console.log(json));
 
-// ================= Async Await ==================
+// =================== Async Await ===================
 
 async function getPosts() {
   const response = await fetch(URL);
