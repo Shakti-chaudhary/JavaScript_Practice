@@ -123,7 +123,7 @@ fData
     console.log(error);
   });
 
-// Fetch Post
+// Fetch Post Method
 
 fetch("https://jsonplaceholder.typicode.com/posts", {
   method: "POST",
